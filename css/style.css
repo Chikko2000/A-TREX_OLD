@@ -1,61 +1,83 @@
-body {
-  font-family: 'Poppins', sans-serif;
+body.chi-siamo {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  text-align: center;
-  background-color: #f5f5f5;
-  color: #333;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
+  padding: 15px 30px;
+  background-color: #e0f0ff;
 }
 
-.logo {
-  height: 60px;
+header .logo {
+  height: 50px;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
+  font-weight: bold;
   color: #333;
-  font-weight: 600;
-  transition: color 0.3s;
 }
 
-nav a:hover,
 nav a.active {
-  color: #00aaff;
+  color: #007acc;
 }
 
 main {
-  padding: 60px 20px;
+  padding: 40px 20px;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.team {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.member {
+  max-width: 300px;
+  text-align: center;
+}
+
+.team-member {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+
+.bio h3 {
+  margin-bottom: 10px;
+}
+
+.bio p {
+  font-size: 0.95rem;
+  color: #555;
 }
 
 footer {
-  background-color: #222;
-  color: white;
-  padding: 20px 0;
-  margin-top: 60px;
+  text-align: center;
+  background-color: #e0f0ff;
+  padding: 20px;
+  margin-top: 50px;
 }
-
-.team img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  margin: 10px;
-  object-fit: cover;
-}
-
-/* Page color accents */
-.home main { background-color: #e6f7ff; }
-.attrezzatura main { background-color: #fff5ec; }
-.chi-siamo main { background-color: #f0f0f0; }
-.contatti main { background-color: #eaffea; }
