@@ -1,11 +1,14 @@
-body.chi-siamo {
+/* Stile generale */
+body {
   font-family: Arial, sans-serif;
   color: #333;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  text-align: center; /* tutto centrato */
 }
 
+/* Header e logo */
 header {
   display: flex;
   justify-content: space-between;
@@ -15,30 +18,51 @@ header {
 }
 
 header .logo {
-  height: 50px;
+  height: 70px; /* più grande */
+  transition: transform 0.3s ease; /* animazione al passaggio */
 }
 
+header .logo:hover {
+  transform: scale(1.1) rotate(3deg); /* ingrandimento e leggera rotazione */
+}
+
+/* Link di navigazione */
 nav a {
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
   color: #333;
+  font-size: 1.1rem; /* più grandi */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 nav a.active {
   color: #007acc;
 }
 
+nav a:hover {
+  color: #007acc; /* cambia colore */
+  transform: scale(1.2) translateY(-3px); /* ingrandimento e sollevamento */
+}
+
+/* Main content */
 main {
   padding: 40px 20px;
 }
 
+/* Centrare titoli e paragrafi */
+h1, h2, h3, h4, h5, h6, p {
+  text-align: center;
+}
+
+/* Sezione intro */
 .intro {
   max-width: 800px;
   margin: 0 auto 50px auto;
   text-align: center;
 }
 
+/* Team */
 .team {
   max-width: 1000px;
   margin: 0 auto;
@@ -75,6 +99,24 @@ main {
   color: #555;
 }
 
+/* Pulsanti generici */
+button, .btn {
+  font-size: 1.1rem; /* più grandi */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007acc;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.1);
+  background-color: #005fa3; /* tonalità più scura */
+}
+
+/* Footer */
 footer {
   text-align: center;
   background-color: #e0f0ff;
