@@ -3,54 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A-TREX | Attrezzatura</title>
+  <title>A-TREX | Home</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <style>
+    /* --- Slideshow full screen --- */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* --- Testo sopra le immagini --- */
+    .slide-text {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      text-shadow: 0 0 15px rgba(0,0,0,0.7);
+      max-width: 90%;
+    }
+
+    .slide-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .slide-text p {
+      font-size: 1.2rem;
+    }
+
+    /* --- Bottone --- */
+    .slide-text a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .slide-text a:hover {
+      background: #0056b3;
+    }
+
+    /* --- Header e footer sopra slideshow --- */
+    header, footer {
+      position: relative;
+      z-index: 10;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+    }
+  </style>
 </head>
-<body class="attrezzatura">
+
+<body class="home">
   <header>
-    <img src="img/logo.png" alt="Logo A-TREX" class="logo">
+    <img src="img/logo.jpeg" alt="Logo A-TREX" class="logo">
     <nav>
-      <a href="index.html">Home</a>
-      <a href="attrezzatura.html" class="active">Attrezzatura</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="attrezzatura.html">Attrezzatura</a>
       <a href="chi-siamo.html">Chi Siamo</a>
       <a href="contatti.html">Contatti</a>
     </nav>
   </header>
 
   <main>
-    <h1>La nostra Attrezzatura</h1>
-    <p>Offriamo attrezzature professionali per eventi di ogni tipo. Scopri cosa puoi noleggiare da noi.</p>
-
-    <section class="products">
-      <div class="product-card">
-        <img src="img/pedane.jpg" alt="Pedane Sagitter" class="product-image">
-        <h3>10 Pedane Sagitter</h3>
-        <p>Misura 2x1 m, altezza 60 cm, modulari e facilmente assemblabili.</p>
+    <!-- SLIDESHOW -->
+    <div class="slideshow-container">
+      <div class="slide active" style="background-image: url('img/slide1.jpg');">
+        <div class="slide-text">
+          <h1>Benvenuto in A-TREX</h1>
+          <p>Strutture e palchi per eventi in tutta Italia</p>
+          <a href="attrezzatura.html">Scopri di più</a>
+        </div>
       </div>
 
-      <div class="product-card">
-        <img src="img/palco.jpg" alt="Palco modulabile" class="product-image">
-        <h3>1 Palco Modulabile</h3>
-        <p>Dimensioni massimo 8x4 m, altezza 100 cm, ideale per grandi eventi.</p>
+      <div class="slide" style="background-image: url('img/slide2.jpg');">
+        <div class="slide-text">
+          <h1>Qualità e Sicurezza</h1>
+          <p>Soluzioni affidabili per eventi professionali</p>
+        </div>
       </div>
 
-      <div class="product-card">
-        <img src="img/sedie.jpg" alt="Sedie per eventi" class="product-image">
-        <h3>100 Sedie per Eventi</h3>
-        <p>Comode e resistenti, perfette per ogni tipo di spettacolo o conferenza.</p>
+      <div class="slide" style="background-image: url('img/slide3.jpg');">
+        <div class="slide-text">
+          <h1>Esperienza e Passione</h1>
+          <p>Da anni al servizio del mondo dello spettacolo</p>
+        </div>
       </div>
-
-      <div class="product-card">
-        <img src="img/impianto.jpg" alt="Impianto 2000W" class="product-image">
-        <h3>1 Impianto 2000W</h3>
-        <p>Completo di attrezzatura audio professionale per ogni esigenza sonora.</p>
-      </div>
-    </section>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 A-TREX | Tutti i diritti riservati</p>
   </footer>
+
+  <script>
+    // --- Script per far scorrere le immagini ---
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 5000); // Cambia immagine ogni 5 secondi
+
+    // Scroll in alto quando si ricarica
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  </script>
 </body>
 </html>
