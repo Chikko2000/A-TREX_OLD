@@ -17,12 +17,63 @@
       <a href="contatti.html">Contatti</a>
     </nav>
   </header>
-  <main>
-    <h1>Attrezzatura</h1>
-    <p>Disponiamo di palchi modulari, coperture, impianti audio e luci di alta qualità, ideali per concerti, fiere e spettacoli.</p>
+
+  <!-- HERO -->
+  <section class="hero-attrezzatura">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>Attrezzature Professionali</h1>
+      <p>Palchi, pedane, impianti audio e luci per eventi di ogni tipo</p>
+    </div>
+  </section>
+
+  <!-- SEZIONE ATTREZZATURA -->
+  <main class="attrezzatura-content">
+    <h2>La Nostra Attrezzatura</h2>
+    <div class="attrezzatura-grid">
+
+      <div class="attrezzatura-card">
+        <img src="img/pedane.jpg" alt="Pedane modulari">
+        <div class="card-text">
+          <h3>Pedane Modulari Sagitter</h3>
+          <p>8 pedane 2x1m Sagitter, altezza regolabile 60–40cm. Modulari e versatili per qualsiasi configurazione di palco.</p>
+        </div>
+      </div>
+
+      <div class="attrezzatura-card">
+        <img src="img/palco-faraone.jpg" alt="Palco Faraone">
+        <div class="card-text">
+          <h3>Palco Faraone</h3>
+          <p>Struttura modulabile fino a 8x4m, altezza 100cm. Ideale per eventi di medie dimensioni e installazioni rapide.</p>
+        </div>
+      </div>
+
+      <div class="attrezzatura-card">
+        <img src="img/impianto-luci.jpg" alt="Impianto audio e luci">
+        <div class="card-text">
+          <h3>Impianto Audio e Luci</h3>
+          <p>Mixer, microfoni, casse e illuminazione completa per gestire eventi e feste con qualità professionale.</p>
+        </div>
+      </div>
+
+    </div>
   </main>
+
   <footer>
-    <p>© 2025 A-TREX</p>
+    <p>© 2025 A-TREX | All rights reserved</p>
   </footer>
+
+  <script>
+    // Effetto di fade-in al caricamento
+    const cards = document.querySelectorAll('.attrezzatura-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
